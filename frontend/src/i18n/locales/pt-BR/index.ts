@@ -1,0 +1,122 @@
+export default {
+  // Common
+  common: {
+    loading: 'Carregando...',
+    error: 'Ocorreu um erro',
+    save: 'Salvar',
+    cancel: 'Cancelar',
+    delete: 'Excluir',
+    edit: 'Editar',
+    create: 'Criar',
+    search: 'Buscar',
+    submit: 'Enviar',
+    close: 'Fechar',
+    confirm: 'Confirmar',
+    back: 'Voltar',
+    next: 'Próximo',
+    yes: 'Sim',
+    no: 'Não',
+  },
+  
+  // Navigation
+  nav: {
+    home: 'Início',
+    items: 'Itens',
+    donations: 'Doações',
+    profile: 'Perfil',
+    login: 'Entrar',
+    logout: 'Sair',
+    signup: 'Cadastrar',
+  },
+  
+  // Auth
+  auth: {
+    email: 'E-mail',
+    password: 'Senha',
+    username: 'Nome de usuário',
+    fullName: 'Nome completo',
+    location: 'Localização',
+    phone: 'Telefone (opcional)',
+    loginTitle: 'Entrar',
+    signupTitle: 'Criar Conta',
+    noAccount: 'Não tem uma conta?',
+    hasAccount: 'Já tem uma conta?',
+    forgotPassword: 'Esqueceu a senha?',
+  },
+  
+  // Items
+  item: {
+    title: 'Título',
+    description: 'Descrição',
+    category: 'Categoria',
+    condition: 'Estado',
+    location: 'Local de retirada',
+    status: 'Status',
+    donor: 'Doador',
+    posted: 'Publicado',
+    categories: {
+      clothing: 'Roupas',
+      furniture: 'Móveis',
+      electronics: 'Eletrônicos',
+      books: 'Livros',
+      toys: 'Brinquedos',
+      household: 'Casa',
+      sports: 'Esportes',
+      other: 'Outros',
+    },
+    conditions: {
+      new: 'Novo',
+      likeNew: 'Como Novo',
+      good: 'Bom',
+      fair: 'Regular',
+      used: 'Usado',
+    },
+    statuses: {
+      available: 'Disponível',
+      pending: 'Pendente',
+      completed: 'Concluído',
+    },
+    postItem: 'Publicar um Item',
+    editItem: 'Editar Item',
+    claimItem: 'Solicitar Este Item',
+    myItems: 'Meus Itens',
+    availableItems: 'Itens Disponíveis',
+    noItems: 'Nenhum item encontrado',
+  },
+  
+  // Donations
+  donation: {
+    title: 'Doação',
+    message: 'Mensagem para o Doador',
+    messagePlaceholder: 'Apresente-se e explique por que gostaria deste item...',
+    requestSent: 'Solicitação Enviada',
+    pending: 'Pendente',
+    completed: 'Concluído',
+    myDonations: 'Minhas Doações',
+    received: 'Recebidas',
+    given: 'Doadas',
+    markComplete: 'Marcar como Concluído',
+    completeConfirm: 'Confirmar que esta doação foi concluída?',
+  },
+  
+  // Home
+  home: {
+    title: 'Dê com Generosidade. Receba com Gratidão.',
+    subtitle: 'Uma comunidade onde vizinhos compartilham o que têm e recebem o que precisam.',
+    howItWorks: 'Como Funciona',
+    step1: 'Publique itens que não precisa mais',
+    step2: 'Vizinhos navegam e solicitam itens',
+    step3: 'Conecte-se e complete a troca',
+    startNow: 'Começar a Compartilhar',
+    browseItems: 'Ver Itens',
+  },
+  
+  // Footer
+  footer: {
+    tagline: 'Construindo comunidade através da generosidade',
+    about: 'Sobre',
+    contact: 'Contato',
+    terms: 'Termos',
+    privacy: 'Privacidade',
+  },
+};
