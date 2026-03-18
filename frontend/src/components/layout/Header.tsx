@@ -1,54 +1,49 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { LanguageSwitcher } from '../LanguageSwitcher';
+import { LanguageSwitcher } from '@/components/LanguageSwitcher';
+
+function NavLink({ to, label }: { to: string; label: string }) {
+  const { pathname } = useLocation();
+  const active = pathname === to;
+
+  return (
+    <Link
+      to={to}
+      className={`text-xs tracking-[0.2em] uppercase font-medium px-3 py-1 transition-colors ${
+        active
+          ? 'bg-moss-500 text-white dark:bg-moss-400 dark:text-stone-950'
+          : 'text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100'
+      }`}
+    >
+      {label}
+    </Link>
+  );
+}
 
 export function Header() {
   const { t } = useTranslation();
-  const location = useLocation();
-
-  const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-        <div className="flex items-center gap-2">
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-green-500 rounded-full"></div>
-            <h1 className="text-xl font-bold text-gray-900 dark:text-white">Buy Nothing</h1>
-          </Link>
-        </div>
-        <nav className="flex items-center gap-6">
-          <Link
-            to="/"
-            className={`text-sm font-medium transition-colors ${
-              isActive('/')
-                ? 'text-green-600 dark:text-green-400'
-                : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
-            }`}
-          >
-            {t('nav.home')}
-          </Link>
-          <Link
-            to="/items"
-            className={`text-sm font-medium transition-colors ${
-              isActive('/items')
-                ? 'text-green-600 dark:text-green-400'
-                : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
-            }`}
-          >
-            {t('nav.items')}
-          </Link>
-          <Link
-            to="/donations"
-            className={`text-sm font-medium transition-colors ${
-              isActive('/donations')
-                ? 'text-green-600 dark:text-green-400'
-                : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
-            }`}
-          >
-            {t('nav.donations')}
-          </Link>
-          <LanguageSwitcher />
+    <header className="bg-stone-50 dark:bg-stone-950 pt-8 pb-4">
+      <div className="max-w-5xl mx-auto px-6 flex flex-col items-center gap-4">
+        {/* Brand */}
+        <Link to="/" className="flex flex-col items-center gap-1 group">
+          <span className="text-2xl font-black tracking-tight uppercase text-stone-900 dark:text-stone-100">
+            Buy Nothing
+          </span>
+          <span className="text-[10px] tracking-[0.3em] uppercase text-moss-500 dark:text-moss-400 font-medium">
+            Fortaleza
+          </span>
+        </Link>
+
+        {/* Navigation */}
+        <nav className="flex items-center gap-1">
+          <NavLink to="/" label={t('nav.home')} />
+          <NavLink to="/items" label={t('nav.items')} />
+          <NavLink to="/donations" label={t('nav.donations')} />
+          <div className="ml-3 border-l border-stone-300 dark:border-stone-700 pl-3">
+            <LanguageSwitcher />
+          </div>
         </nav>
       </div>
     </header>

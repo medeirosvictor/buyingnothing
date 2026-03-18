@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
-import { Layout } from './components/layout';
-import { HomePage, ItemsPage, DonationsPage } from './pages';
+import { Layout } from '@/components/layout';
+import { HomePage, ItemsPage, DonationsPage, NotFoundPage } from '@/pages';
 
 function App() {
   return (
@@ -9,6 +9,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/items" element={<ItemsPage />} />
         <Route path="/donations" element={<DonationsPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
   );

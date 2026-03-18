@@ -97,6 +97,14 @@ export default {
     given: 'Given',
     markComplete: 'Mark as Complete',
     completeConfirm: 'Confirm this donation has been completed?',
+    noDonations: 'No donations yet',
+  },
+
+  // Not Found
+  notFound: {
+    title: 'Page Not Found',
+    description: 'The page you are looking for does not exist.',
+    goHome: 'Go Home',
   },
   
   // Home

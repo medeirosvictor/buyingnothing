@@ -97,6 +97,14 @@ export default {
     given: 'Doadas',
     markComplete: 'Marcar como Concluído',
     completeConfirm: 'Confirmar que esta doação foi concluída?',
+    noDonations: 'Nenhuma doação ainda',
+  },
+
+  // Not Found
+  notFound: {
+    title: 'Página Não Encontrada',
+    description: 'A página que você procura não existe.',
+    goHome: 'Ir para Início',
   },
   
   // Home

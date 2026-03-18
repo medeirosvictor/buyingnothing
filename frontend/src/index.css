@@ -2,8 +2,35 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@theme {
+  /* Moss / overgrown palette */
+  --color-moss-50: #f4f7f0;
+  --color-moss-100: #e4ecd8;
+  --color-moss-200: #c8d9b1;
+  --color-moss-300: #a3bf7e;
+  --color-moss-400: #7da34e;
+  --color-moss-500: #5c7a32;
+  --color-moss-600: #4a6228;
+  --color-moss-700: #3b4e20;
+  --color-moss-800: #2d3a1a;
+  --color-moss-900: #1e2712;
+  --color-moss-950: #0f140a;
+
+  --color-stone-50: #fafaf9;
+  --color-stone-100: #f0efeb;
+  --color-stone-200: #e2e0d8;
+  --color-stone-300: #ccc9bd;
+  --color-stone-400: #a8a393;
+  --color-stone-500: #8a8474;
+  --color-stone-600: #6e695c;
+  --color-stone-700: #55524a;
+  --color-stone-800: #3a3834;
+  --color-stone-900: #252422;
+  --color-stone-950: #141311;
+}
+
 :root {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
@@ -25,4 +52,10 @@ body {
 
 #root {
   width: 100%;
+}
+
+/* Brutalist selection */
+::selection {
+  background: var(--color-moss-400);
+  color: white;
 }
