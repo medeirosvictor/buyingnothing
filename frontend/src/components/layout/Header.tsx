@@ -39,8 +39,8 @@ export function Header() {
         {/* Navigation */}
         <nav className="flex items-center gap-1">
           <NavLink to="/" label={t('nav.home')} />
-          <NavLink to="/items" label={t('nav.items')} />
           <NavLink to="/donations" label={t('nav.donations')} />
+          <NavLink to="/profile" label={t('nav.profile')} />
           <div className="ml-3 border-l border-stone-300 dark:border-stone-700 pl-3">
             <LanguageSwitcher />
           </div>

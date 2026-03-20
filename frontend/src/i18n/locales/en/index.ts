@@ -163,4 +163,12 @@ export default {
       error: 'Something went wrong. Please try again.',
     },
   },
+
+  // About
+  about: {
+    title: 'About',
+    description1: 'Buy Nothing is a community-based gifting network. It is a place where neighbors can give and receive items for free, with no strings attached.',
+    description2: 'This project is based on the Buy Nothing Project, which started in 2013 in Bainbridge Island, Washington. The movement has since spread worldwide, fostering communities built on generosity and trust.',
+    description3: 'This version serves the city of Fortaleza, Brazil.',
+  },
 };

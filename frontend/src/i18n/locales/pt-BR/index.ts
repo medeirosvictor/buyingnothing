@@ -163,4 +163,12 @@ export default {
       error: 'Algo deu errado. Por favor, tente novamente.',
     },
   },
+
+  // About
+  about: {
+    title: 'Sobre',
+    description1: 'Compre Nada e uma rede comunitaria de doacoes. E um lugar onde vizinhos podem doar e receber itens gratuitamente, sem condicoes.',
+    description2: 'Este projeto e baseado no Buy Nothing Project, que comecou em 2013 em Bainbridge Island, Washington. O movimento se espalhou pelo mundo, criando comunidades baseadas em generosidade e confianca.',
+    description3: 'Esta versao serve a cidade de Fortaleza, Brasil.',
+  },
 };

@@ -1,4 +1,4 @@
 export { HomePage } from './HomePage';
-export { ItemsPage } from './ItemsPage';
 export { DonationsPage } from './DonationsPage';
+export { ProfilePage } from './ProfilePage';
 export { NotFoundPage } from './NotFoundPage';
