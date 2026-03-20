@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useEffect, useState, useCallback } from 'react';
 import { Map } from '@/components/Map';
-import { ItemCard } from '@/components/items';
+import { ItemCard, ItemDetailModal } from '@/components/items';
 import type { ItemCardData } from '@/components/items';
 import type { MapMarker } from '@/components/Map';
 import { AnimatedList } from '@/components/ui';
@@ -38,6 +38,13 @@ export function DonationsPage() {
       setActiveId(index != null ? (items[index]?.id ?? null) : null);
     },
     [items],
+  );
+
+  const handleItemClick = useCallback(
+    (item: ItemFromAPI) => {
+      dialog.open(<ItemDetailModal item={item} onClose={() => dialog.close()} />);
+    },
+    [dialog],
   );
 
   const markers: MapMarker[] = items
@@ -89,6 +96,7 @@ export function DonationsPage() {
             <AnimatedList
               items={items}
               onActiveIndexChange={handleActiveChange}
+              onItemSelect={handleItemClick}
               renderItem={(item, _index, isSelected) => (
                 <ItemCard
                   item={item}

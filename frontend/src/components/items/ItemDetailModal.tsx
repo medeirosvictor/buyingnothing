@@ -12,7 +12,7 @@ export function ItemDetailModal({ item, onClose }: ItemDetailModalProps) {
   const posted = new Date(item.created_at).toLocaleDateString();
 
   return (
-    <div className="p-6 max-w-lg w-full">
+    <div className="bg-stone-50 dark:bg-stone-900 border-2 border-stone-900 dark:border-stone-100 p-6">
       {/* Header */}
       <div className="flex justify-between items-start mb-4">
         <h2 className="text-xl font-black uppercase tracking-tight text-stone-900 dark:text-stone-100 pr-4">
