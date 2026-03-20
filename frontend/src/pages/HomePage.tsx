@@ -36,7 +36,7 @@ export function HomePage() {
         </h3>
         <div className="grid md:grid-cols-3 gap-6">
           {[t('home.step1'), t('home.step2'), t('home.step3')].map((step, i) => (
-            <div key={i} className="p-6 bg-white dark:bg-stone-900 border-2 border-stone-200 dark:border-stone-800">
+            <div key={i} className="p-6 bg-white dark:bg-stone-900 border-2 border-stone-200 dark:border-stone-800 rounded-sm">
               <span className="text-4xl font-black text-moss-300 dark:text-moss-700">
                 {String(i + 1).padStart(2, '0')}
               </span>

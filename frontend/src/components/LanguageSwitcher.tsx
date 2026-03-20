@@ -27,7 +27,7 @@ export function LanguageSwitcher() {
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="text-xs tracking-[0.2em] uppercase font-medium text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors flex items-center gap-1"
+        className="text-xs tracking-[0.2em] uppercase font-medium text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors flex items-center gap-1 cursor-pointer"
       >
         {current.short}
         <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -36,7 +36,7 @@ export function LanguageSwitcher() {
       </button>
 
       {open && (
-        <div className="absolute top-full right-0 mt-2 bg-white dark:bg-stone-900 border-2 border-stone-900 dark:border-stone-100 z-50 min-w-[140px]">
+        <div className="absolute top-full right-0 mt-2 bg-white dark:bg-stone-900 border-2 border-stone-900 dark:border-stone-100 z-50 min-w-[140px] rounded-sm">
           {languages.map(lang => (
             <button
               key={lang.code}

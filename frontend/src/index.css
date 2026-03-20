@@ -3,17 +3,17 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  /* Moss / overgrown palette */
+  /* Moss / overgrown palette - neon variant for dark mode */
   --color-moss-50: #f4f7f0;
   --color-moss-100: #e4ecd8;
   --color-moss-200: #c8d9b1;
-  --color-moss-300: #a3bf7e;
-  --color-moss-400: #7da34e;
-  --color-moss-500: #5c7a32;
-  --color-moss-600: #4a6228;
-  --color-moss-700: #3b4e20;
-  --color-moss-800: #2d3a1a;
-  --color-moss-900: #1e2712;
+  --color-moss-300: #7dde6f;
+  --color-moss-400: #5fcf4f;
+  --color-moss-500: #3fbf2f;
+  --color-moss-600: #2fa020;
+  --color-moss-700: #258018;
+  --color-moss-800: #1c6010;
+  --color-moss-900: #144008;
   --color-moss-950: #0f140a;
 
   --color-stone-50: #fafaf9;

@@ -6,6 +6,9 @@ import type { ItemCardData } from '@/components/items';
 import type { MapMarker } from '@/components/Map';
 import { AnimatedList } from '@/components/ui';
 import { apiFetch } from '@/lib/api';
+import { useAuth } from '@/hooks/useAuth';
+import { useDialog } from '@/hooks/useDialog';
+import { LoginForm } from '@/components/auth';
 
 interface ItemFromAPI extends ItemCardData {
   latitude: number | null;
@@ -17,6 +20,8 @@ interface ItemFromAPI extends ItemCardData {
 
 export function DonationsPage() {
   const { t } = useTranslation();
+  const { isAuthenticated } = useAuth();
+  const dialog = useDialog();
   const [items, setItems] = useState<ItemFromAPI[]>([]);
   const [loading, setLoading] = useState(true);
   const [activeId, setActiveId] = useState<number | null>(null);
@@ -47,10 +52,19 @@ export function DonationsPage() {
   return (
     <div className="max-w-7xl mx-auto px-6 py-10">
       <div className="flex justify-between items-end mb-8">
-        <h1 className="text-3xl font-black uppercase tracking-tight text-stone-900 dark:text-stone-100">
+        <h1 className="text-xl font-black uppercase tracking-tight text-stone-900 dark:text-stone-100">
           {t('item.availableItems')}
         </h1>
-        <button className="px-5 py-2 bg-moss-500 text-white text-xs font-bold uppercase tracking-widest hover:bg-moss-600 transition-colors">
+        <button
+          onClick={() => {
+            if (!isAuthenticated) {
+              dialog.open(<LoginForm />);
+            } else {
+              // TODO: open post-item form
+            }
+          }}
+          className="px-5 py-2 bg-moss-500 text-white text-xs font-bold uppercase tracking-widest hover:bg-moss-600 transition-colors"
+        >
           {t('item.postItem')}
         </button>
       </div>
@@ -65,7 +79,7 @@ export function DonationsPage() {
             <p className="text-sm text-stone-500 p-4">{t('common.loading')}</p>
           )}
           {!loading && items.length === 0 && (
-            <div className="border-2 border-stone-200 dark:border-stone-800 p-10 text-center">
+            <div className="border-2 border-stone-200 dark:border-stone-800 p-10 text-center rounded-sm">
               <p className="text-sm text-stone-500 dark:text-stone-400 uppercase tracking-wider">
                 {t('item.noItems')}
               </p>
@@ -87,7 +101,7 @@ export function DonationsPage() {
         </div>
 
         {/* Map */}
-        <div className="flex-1 border-2 border-stone-200 dark:border-stone-800 overflow-hidden sticky top-24">
+        <div className="flex-1 border-2 border-stone-200 dark:border-stone-800 overflow-hidden sticky top-24 rounded-sm">
           <Map
             height="600px"
             markers={markers}

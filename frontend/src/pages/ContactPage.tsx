@@ -93,7 +93,7 @@ export function ContactPage() {
   return (
     <div className="max-w-2xl mx-auto px-6 py-16">
       <div className="text-center mb-12">
-        <h1 className="text-3xl md:text-4xl font-black uppercase tracking-tight text-stone-900 dark:text-stone-100">
+        <h1 className="text-xl font-black uppercase tracking-tight text-stone-900 dark:text-stone-100">
           {t('contact.title')}
         </h1>
         <p className="mt-4 text-stone-500 dark:text-stone-400">
@@ -103,7 +103,7 @@ export function ContactPage() {
 
       <form
         onSubmit={handleSubmit}
-        className="bg-white dark:bg-stone-900 border-2 border-stone-200 dark:border-stone-800 p-6 md:p-8"
+        className="bg-white dark:bg-stone-900 border-2 border-stone-200 dark:border-stone-800 p-6 md:p-8 rounded-sm"
       >
         {submitStatus === 'success' && (
           <div className="mb-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 text-green-700 dark:text-green-400 text-sm">

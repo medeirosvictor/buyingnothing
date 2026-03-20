@@ -5,7 +5,7 @@ export function AboutPage() {
 
   return (
     <div className="max-w-2xl mx-auto px-6 py-16">
-      <h1 className="text-3xl md:text-4xl font-black uppercase tracking-tight text-stone-900 dark:text-stone-100">
+      <h1 className="text-xl font-black uppercase tracking-tight text-stone-900 dark:text-stone-100">
         {t('about.title')}
       </h1>
 
