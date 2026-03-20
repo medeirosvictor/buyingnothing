@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { Layout } from '@/components/layout';
-import { HomePage, DonationsPage, ProfilePage, ContactPage, AboutPage, NotFoundPage } from '@/pages';
+import { HomePage, DonationsPage, ProfilePage, ContactPage, AboutPage, TermsPage, NotFoundPage } from '@/pages';
 
 function App() {
   return (
@@ -11,6 +11,7 @@ function App() {
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/terms" element={<TermsPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

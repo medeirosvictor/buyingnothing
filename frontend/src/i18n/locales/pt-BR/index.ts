@@ -126,7 +126,7 @@ export default {
     step2: 'Vizinhos navegam e solicitam itens',
     step3: 'Conecte-se e complete a troca',
     startNow: 'Começar a Compartilhar',
-    browseItems: 'Ver Itens',
+    browseItems: 'Ver Doacoes',
   },
   
   // Footer
@@ -170,6 +170,39 @@ export default {
       success: 'Obrigado! Sua mensagem foi enviada.',
       error: 'Algo deu errado. Por favor, tente novamente.',
     },
+  },
+
+  // Terms
+  terms: {
+    title: 'Termos de Uso',
+    lastUpdated: 'Última atualização — Março 2026',
+    whatIsThis: 'O que é isto',
+    whatIsThisText1: 'O Compre Nada é uma plataforma comunitária onde pessoas doam coisas que não precisam mais e recebem coisas que precisam. Todos os itens são gratuitos. Não há compra, venda, troca ou escambo.',
+    whatIsThisText2: 'Este não é um serviço comercial. É uma ferramenta para ajudar vizinhos a se conectar e compartilhar dentro da sua comunidade.',
+    howItWorks: 'Como funcionam as doações',
+    howItWorksText1: 'Doadores publicam itens que querem doar. Qualquer pessoa da comunidade pode demonstrar interesse. O doador então escolhe para quem dar e combina a retirada ou entrega diretamente com essa pessoa.',
+    howItWorksText2: 'Todos os arranjos são feitos entre indivíduos. A plataforma facilita a conexão mas não é parte de nenhuma troca.',
+    responsibility: 'Sua responsabilidade',
+    responsibilityText1: 'Seja honesto sobre o que está doando. Descreva os itens com precisão, incluindo defeitos ou desgaste. Se você disse que vai dar algo a alguém, cumpra.',
+    responsibilityText2: 'Seja respeitoso. Trate cada interação como trataria uma conversa com um vizinho — porque é exatamente isso.',
+    noGuarantees: 'Sem garantias',
+    noGuaranteesText1: 'Os itens são dados como estão. Não há garantias, devoluções ou reembolsos — porque não há transação. É um presente.',
+    noGuaranteesText2: 'Fazemos o possível para manter a plataforma funcionando e útil, mas não garantimos disponibilidade, tempo de atividade ou que toda interação será perfeita. Isto é um esforço comunitário, não um contrato de serviço.',
+  },
+
+  // Privacy
+  privacy: {
+    title: 'Privacidade',
+    whatWeCollect: 'O que coletamos',
+    whatWeCollectText1: 'Quando você cria uma conta, armazenamos seu nome, e-mail e bairro. Quando publica um item, armazenamos os detalhes do item e sua localização aproximada.',
+    whatWeCollectText2: 'Usamos a preferência de idioma do seu navegador para exibir o site no seu idioma. Armazenamos sua preferência de tema (claro ou escuro) no seu navegador.',
+    howWeUseIt: 'Como usamos',
+    howWeUseItText1: 'Suas informações são usadas para mostrar suas publicações para a comunidade e permitir que outros membros entrem em contato sobre itens. Seu bairro é usado para mostrar itens perto de você.',
+    howWeUseItText2: 'Não usamos seus dados para publicidade, perfilamento ou análises além da operação básica da plataforma.',
+    whatWeDontDo: 'O que não fazemos',
+    whatWeDontDoText: 'Não vendemos seus dados. Não compartilhamos com terceiros. Não rastreamos você em outros sites. Não enviamos e-mails de marketing.',
+    yourData: 'Seus dados',
+    yourDataText: 'Você pode excluir sua conta a qualquer momento. Quando fizer isso, suas publicações e informações pessoais são removidas. Se tiver dúvidas sobre seus dados, entre em contato pela página de contato.',
   },
 
   // About

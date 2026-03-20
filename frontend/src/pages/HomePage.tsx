@@ -20,7 +20,7 @@ export function HomePage() {
               {t('home.startNow')}
             </button>
             <Link
-              to="/items"
+              to="/donations"
               className="px-8 py-3 border-2 border-stone-900 dark:border-stone-100 text-stone-900 dark:text-stone-100 font-bold text-sm uppercase tracking-widest hover:bg-stone-900 hover:text-stone-50 dark:hover:bg-stone-100 dark:hover:text-stone-900 transition-colors inline-block"
             >
               {t('home.browseItems')}

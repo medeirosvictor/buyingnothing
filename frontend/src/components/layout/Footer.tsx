@@ -7,30 +7,27 @@ export function Footer() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <footer className="bg-stone-900 dark:bg-stone-950 text-stone-500 py-10 mt-auto">
+    <footer className="bg-stone-50 dark:bg-stone-950 text-stone-600 dark:text-stone-500 py-10 mt-auto">
       <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
         <p className="text-xs tracking-[0.15em] uppercase font-medium">
           {t('footer.tagline')}
         </p>
 
         <div className="flex items-center gap-6 text-xs tracking-wider uppercase">
-          <Link to="/about" className="hover:text-stone-100 transition-colors">
+          <Link to="/about" className="hover:text-stone-900 dark:hover:text-stone-100 transition-colors">
             {t('footer.about')}
           </Link>
-          <Link to="/contact" className="hover:text-stone-100 transition-colors">
+          <Link to="/contact" className="hover:text-stone-900 dark:hover:text-stone-100 transition-colors">
             {t('footer.contact')}
           </Link>
-          <Link to="/terms" className="hover:text-stone-100 transition-colors">
-            {t('footer.terms')}
-          </Link>
-          <Link to="/privacy" className="hover:text-stone-100 transition-colors">
-            {t('footer.privacy')}
+          <Link to="/terms" className="hover:text-stone-900 dark:hover:text-stone-100 transition-colors">
+            {t('footer.terms')} & {t('footer.privacy')}
           </Link>
         </div>
 
         <button
           onClick={toggleTheme}
-          className="flex items-center gap-2 text-xs tracking-wider uppercase text-stone-500 hover:text-stone-100 transition-colors"
+          className="flex items-center gap-2 text-xs tracking-wider uppercase text-stone-600 dark:text-stone-500 hover:text-stone-900 dark:hover:text-stone-100 transition-colors"
           aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
         >
           {theme === 'light' ? (
