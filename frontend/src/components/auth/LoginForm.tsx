@@ -103,6 +103,19 @@ export function LoginForm() {
         </button>
       </form>
 
+      {mode === 'login' && (
+        <div className="mt-3 text-right">
+          <button
+            onClick={() => {
+              // TODO: forgot password
+            }}
+            className="text-xs text-stone-400 dark:text-stone-500 hover:text-moss-500 dark:hover:text-moss-400 transition-colors"
+          >
+            {t('auth.forgotPassword')}
+          </button>
+        </div>
+      )}
+
       <div className="mt-4 text-center">
         <button
           onClick={() => {
