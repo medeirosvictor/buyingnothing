@@ -1,4 +1,10 @@
 export default {
+  // Site
+  site: {
+    name: 'Compre Nada',
+    location: 'Fortaleza',
+  },
+
   // Common
   common: {
     loading: 'Carregando...',
@@ -24,6 +30,8 @@ export default {
     items: 'Itens',
     donations: 'Doações',
     profile: 'Perfil',
+    contact: 'Contato',
+    about: 'Sobre',
     login: 'Entrar',
     logout: 'Sair',
     signup: 'Cadastrar',

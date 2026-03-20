@@ -1,4 +1,10 @@
 export default {
+  // Site
+  site: {
+    name: 'Buy Nothing',
+    location: 'Fortaleza',
+  },
+
   // Common
   common: {
     loading: 'Loading...',
@@ -24,6 +30,8 @@ export default {
     items: 'Items',
     donations: 'Donations',
     profile: 'Profile',
+    contact: 'Contact',
+    about: 'About',
     login: 'Log In',
     logout: 'Log Out',
     signup: 'Sign Up',

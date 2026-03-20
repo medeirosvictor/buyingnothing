@@ -27,18 +27,17 @@ export function Header() {
     <header className="bg-stone-50 dark:bg-stone-950 pt-8 pb-4">
       <div className="max-w-5xl mx-auto px-6 flex flex-col items-center gap-4">
         {/* Brand */}
-        <Link to="/" className="flex flex-col items-center gap-1 group">
+        <Link to="/" className="flex flex-col items-center gap-1 group cursor-pointer">
           <span className="text-2xl font-black tracking-tight uppercase text-stone-900 dark:text-stone-100">
-            Buy Nothing
+            {t('site.name')}
           </span>
           <span className="text-[10px] tracking-[0.3em] uppercase text-moss-500 dark:text-moss-400 font-medium">
-            Fortaleza
+            {t('site.location')}
           </span>
         </Link>
 
         {/* Navigation */}
         <nav className="flex items-center gap-1">
-          <NavLink to="/" label={t('nav.home')} />
           <NavLink to="/donations" label={t('nav.donations')} />
           <NavLink to="/profile" label={t('nav.profile')} />
           <div className="ml-3 border-l border-stone-300 dark:border-stone-700 pl-3">

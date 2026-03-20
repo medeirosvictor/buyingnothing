@@ -1,9 +1,10 @@
 import { useTranslation } from 'react-i18next';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { Map } from '@/components/Map';
 import { ItemCard } from '@/components/items';
 import type { ItemCardData } from '@/components/items';
 import type { MapMarker } from '@/components/Map';
+import { AnimatedList } from '@/components/ui';
 import { apiFetch } from '@/lib/api';
 
 interface ItemFromAPI extends ItemCardData {
@@ -18,7 +19,7 @@ export function DonationsPage() {
   const { t } = useTranslation();
   const [items, setItems] = useState<ItemFromAPI[]>([]);
   const [loading, setLoading] = useState(true);
-  const [hoveredId, setHoveredId] = useState<number | null>(null);
+  const [activeId, setActiveId] = useState<number | null>(null);
 
   useEffect(() => {
     apiFetch<ItemFromAPI[]>('/items/')
@@ -26,6 +27,13 @@ export function DonationsPage() {
       .catch(console.error)
       .finally(() => setLoading(false));
   }, []);
+
+  const handleActiveChange = useCallback(
+    (index: number | null) => {
+      setActiveId(index != null ? (items[index]?.id ?? null) : null);
+    },
+    [items],
+  );
 
   const markers: MapMarker[] = items
     .filter((i) => i.latitude != null && i.longitude != null)
@@ -49,7 +57,10 @@ export function DonationsPage() {
 
       <div className="flex gap-6 items-start">
         {/* Item list */}
-        <div className="w-[400px] flex-shrink-0 flex flex-col gap-2 max-h-[600px] overflow-y-auto pr-1">
+        <div
+          className="w-[400px] flex-shrink-0 h-[600px]"
+          style={{ '--gradient-bg': 'var(--list-gradient)' } as React.CSSProperties}
+        >
           {loading && (
             <p className="text-sm text-stone-500 p-4">{t('common.loading')}</p>
           )}
@@ -60,14 +71,19 @@ export function DonationsPage() {
               </p>
             </div>
           )}
-          {items.map((item) => (
-            <ItemCard
-              key={item.id}
-              item={item}
-              active={hoveredId === item.id}
-              onHover={setHoveredId}
+          {!loading && items.length > 0 && (
+            <AnimatedList
+              items={items}
+              onActiveIndexChange={handleActiveChange}
+              renderItem={(item, _index, isSelected) => (
+                <ItemCard item={item} active={isSelected || activeId === item.id} />
+              )}
+              showGradients
+              enableArrowNavigation
+              displayScrollbar
+              className="h-full"
             />
-          ))}
+          )}
         </div>
 
         {/* Map */}
@@ -75,7 +91,7 @@ export function DonationsPage() {
           <Map
             height="600px"
             markers={markers}
-            activeMarkerId={hoveredId}
+            activeMarkerId={activeId}
             scrollWheelZoom
           />
         </div>

@@ -54,6 +54,16 @@ body {
   width: 100%;
 }
 
+/* AnimatedList gradient bg */
+:root {
+  --list-gradient: #fafaf9;
+  --scrollbar-thumb: #ccc9bd;
+}
+.dark {
+  --list-gradient: #141311;
+  --scrollbar-thumb: #55524a;
+}
+
 /* Brutalist selection */
 ::selection {
   background: var(--color-moss-400);

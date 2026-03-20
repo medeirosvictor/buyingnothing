@@ -19,22 +19,19 @@ export interface ItemCardData {
 interface ItemCardProps {
   item: ItemCardData;
   active?: boolean;
-  onHover?: (id: number | null) => void;
 }
 
-export function ItemCard({ item, active = false, onHover }: ItemCardProps) {
+export function ItemCard({ item, active = false }: ItemCardProps) {
   const { t } = useTranslation();
 
   const posted = new Date(item.created_at).toLocaleDateString();
 
   return (
     <div
-      onMouseEnter={() => onHover?.(item.id)}
-      onMouseLeave={() => onHover?.(null)}
-      className={`flex gap-4 p-4 border-2 transition-colors cursor-pointer ${
+      className={`flex gap-4 p-4 border-2 transition-colors ${
         active
           ? 'border-moss-500 bg-moss-50 dark:bg-moss-950/30'
-          : 'border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900 hover:border-stone-400 dark:hover:border-stone-600'
+          : 'border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900'
       }`}
     >
       {/* Image / fallback */}
