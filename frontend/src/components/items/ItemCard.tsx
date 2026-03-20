@@ -8,6 +8,7 @@ export interface ItemCardData {
   condition: string | null;
   neighborhood: string | null;
   image_url: string | null;
+  image_urls?: string[];
   created_at: string;
   donor: {
     id: number;

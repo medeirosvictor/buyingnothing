@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { ImageCarousel } from '@/components/ui';
 import type { ItemCardData } from './ItemCard';
 
 interface ItemDetailModalProps {
@@ -8,13 +9,19 @@ interface ItemDetailModalProps {
 
 export function ItemDetailModal({ item, onClose }: ItemDetailModalProps) {
   const { t } = useTranslation();
-
   const posted = new Date(item.created_at).toLocaleDateString();
 
+  // Build images array: prefer image_urls, fall back to single image_url
+  const images: string[] = item.image_urls?.length
+    ? item.image_urls
+    : item.image_url
+      ? [item.image_url]
+      : [];
+
   return (
-    <div className="bg-stone-50 dark:bg-stone-900 border-2 border-stone-900 dark:border-stone-100 p-6">
+    <div className="bg-stone-50 dark:bg-stone-900 border-2 border-stone-900 dark:border-stone-100">
       {/* Header */}
-      <div className="flex justify-between items-start mb-4">
+      <div className="flex justify-between items-start p-6 pb-0">
         <h2 className="text-xl font-black uppercase tracking-tight text-stone-900 dark:text-stone-100 pr-4">
           {item.title}
         </h2>
@@ -29,31 +36,31 @@ export function ItemDetailModal({ item, onClose }: ItemDetailModalProps) {
         </button>
       </div>
 
-      {/* Image */}
-      {item.image_url ? (
-        <img
-          src={item.image_url}
+      {/* Image carousel */}
+      <div className="mt-4">
+        <ImageCarousel
+          images={images}
           alt={item.title}
-          className="w-full h-64 object-cover bg-stone-200 dark:bg-stone-800 rounded-sm mb-6"
+          height="16rem"
+          fallback={
+            <div className="w-full h-full bg-stone-200 dark:bg-stone-800 flex items-center justify-center">
+              <span className="text-xs uppercase tracking-wider text-stone-400 dark:text-stone-600">
+                {t('item.noImage')}
+              </span>
+            </div>
+          }
         />
-      ) : (
-        <div className="w-full h-48 bg-stone-200 dark:bg-stone-800 flex items-center justify-center rounded-sm mb-6">
-          <span className="text-xs uppercase tracking-wider text-stone-400 dark:text-stone-600">
-            {t('item.noImage')}
-          </span>
-        </div>
-      )}
+      </div>
 
       {/* Details */}
-      <div className="space-y-4">
-        {/* Description */}
+      <div className="p-6 space-y-4">
         {item.description && (
           <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
             {item.description}
           </p>
         )}
 
-        {/* Meta info */}
+        {/* Meta grid */}
         <div className="grid grid-cols-2 gap-4">
           {item.category && (
             <div>
@@ -65,7 +72,6 @@ export function ItemDetailModal({ item, onClose }: ItemDetailModalProps) {
               </p>
             </div>
           )}
-
           {item.condition && (
             <div>
               <span className="text-[10px] uppercase tracking-wider text-stone-400 dark:text-stone-500">
@@ -78,7 +84,6 @@ export function ItemDetailModal({ item, onClose }: ItemDetailModalProps) {
           )}
         </div>
 
-        {/* Location */}
         {item.neighborhood && (
           <div>
             <span className="text-[10px] uppercase tracking-wider text-stone-400 dark:text-stone-500">
@@ -90,7 +95,7 @@ export function ItemDetailModal({ item, onClose }: ItemDetailModalProps) {
           </div>
         )}
 
-        {/* Donor & Date */}
+        {/* Donor & date */}
         <div className="flex items-center gap-4 pt-2 border-t border-stone-200 dark:border-stone-700">
           <div>
             <span className="text-[10px] uppercase tracking-wider text-stone-400 dark:text-stone-500">
@@ -110,8 +115,7 @@ export function ItemDetailModal({ item, onClose }: ItemDetailModalProps) {
           </div>
         </div>
 
-        {/* Action */}
-        <button className="w-full mt-6 px-6 py-3 bg-moss-500 text-white text-xs font-bold uppercase tracking-widest hover:bg-moss-600 transition-colors rounded-sm">
+        <button className="w-full mt-2 px-6 py-3 bg-moss-500 text-white text-xs font-bold uppercase tracking-widest hover:bg-moss-600 transition-colors">
           {t('item.claimItem')}
         </button>
       </div>
