@@ -19,16 +19,18 @@ export interface ItemCardData {
 interface ItemCardProps {
   item: ItemCardData;
   active?: boolean;
+  onClick?: () => void;
 }
 
-export function ItemCard({ item, active = false }: ItemCardProps) {
+export function ItemCard({ item, active = false, onClick }: ItemCardProps) {
   const { t } = useTranslation();
 
   const posted = new Date(item.created_at).toLocaleDateString();
 
   return (
     <div
-      className={`flex gap-4 p-4 border-2 transition-colors ${
+      onClick={onClick}
+      className={`flex gap-4 p-4 border-2 transition-colors cursor-pointer ${
         active
           ? 'border-moss-500 bg-moss-50 dark:bg-moss-950/30'
           : 'border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900'

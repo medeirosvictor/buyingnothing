@@ -110,6 +110,19 @@ export default {
     noDonations: 'No donations yet',
   },
 
+  // Profile
+  profile: {
+    title: 'Profile',
+    editProfile: 'Edit Profile',
+    deleteAccount: 'Delete Account',
+    noProfileImage: 'No photo',
+    neighborhood: 'Neighborhood',
+    phone: 'Phone',
+    email: 'Email',
+    name: 'Name',
+    notProvided: 'Not provided',
+  },
+
   // Not Found
   notFound: {
     title: 'Page Not Found',

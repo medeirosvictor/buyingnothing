@@ -90,7 +90,10 @@ export function DonationsPage() {
               items={items}
               onActiveIndexChange={handleActiveChange}
               renderItem={(item, _index, isSelected) => (
-                <ItemCard item={item} active={isSelected || activeId === item.id} />
+                <ItemCard
+                  item={item}
+                  active={isSelected || activeId === item.id}
+                />
               )}
               showGradients
               enableArrowNavigation

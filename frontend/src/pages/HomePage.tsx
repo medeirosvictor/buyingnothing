@@ -1,8 +1,13 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { useAuth } from '@/hooks/useAuth';
+import { useDialog } from '@/hooks/useDialog';
+import { LoginForm } from '@/components/auth';
 
 export function HomePage() {
   const { t } = useTranslation();
+  const { isAuthenticated } = useAuth();
+  const dialog = useDialog();
 
   return (
     <>
@@ -16,7 +21,16 @@ export function HomePage() {
             {t('home.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mt-10">
-            <button className="px-8 py-3 bg-moss-500 text-white font-bold text-sm uppercase tracking-widest hover:bg-moss-600 transition-colors">
+            <button
+              onClick={() => {
+                if (!isAuthenticated) {
+                  dialog.open(<LoginForm />);
+                } else {
+                  // TODO: redirect to post item
+                }
+              }}
+              className="px-8 py-3 bg-moss-500 text-white font-bold text-sm uppercase tracking-widest hover:bg-moss-600 transition-colors"
+            >
               {t('home.startNow')}
             </button>
             <Link
