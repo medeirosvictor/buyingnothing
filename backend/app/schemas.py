@@ -1,14 +1,14 @@
 from pydantic import BaseModel
 from datetime import datetime
-from typing import Optional, List
+from typing import Optional
 
 
-# ========== USER SCHEMAS ==========
+# ========== USER ==========
 class UserBase(BaseModel):
     email: str
     username: str
     full_name: Optional[str] = None
-    location: Optional[str] = None
+    neighborhood: Optional[str] = None
     phone: Optional[str] = None
 
 
@@ -19,28 +19,30 @@ class UserCreate(UserBase):
 class UserResponse(UserBase):
     id: int
     created_at: datetime
-    
+
     class Config:
         from_attributes = True
 
 
 class UserSimple(BaseModel):
-    """Simplified user info for nested responses"""
     id: int
     username: str
     full_name: Optional[str] = None
-    
+
     class Config:
         from_attributes = True
 
 
-# ========== ITEM SCHEMAS ==========
+# ========== ITEM ==========
 class ItemBase(BaseModel):
     title: str
     description: Optional[str] = None
     category: Optional[str] = None
     condition: Optional[str] = None
-    location: Optional[str] = None
+    neighborhood: Optional[str] = None
+    latitude: Optional[float] = None
+    longitude: Optional[float] = None
+    image_url: Optional[str] = None
 
 
 class ItemCreate(ItemBase):
@@ -52,7 +54,10 @@ class ItemUpdate(BaseModel):
     description: Optional[str] = None
     category: Optional[str] = None
     condition: Optional[str] = None
-    location: Optional[str] = None
+    neighborhood: Optional[str] = None
+    latitude: Optional[float] = None
+    longitude: Optional[float] = None
+    image_url: Optional[str] = None
     status: Optional[str] = None
 
 
@@ -62,7 +67,7 @@ class ItemResponse(ItemBase):
     donor_id: int
     created_at: datetime
     updated_at: datetime
-    
+
     class Config:
         from_attributes = True
 
@@ -71,7 +76,7 @@ class ItemWithDonor(ItemResponse):
     donor: UserSimple
 
 
-# ========== DONATION SCHEMAS ==========
+# ========== DONATION ==========
 class DonationBase(BaseModel):
     message: Optional[str] = None
 
@@ -92,16 +97,15 @@ class DonationResponse(DonationBase):
     recipient_id: int
     completed_at: Optional[datetime] = None
     created_at: datetime
-    
+
     class Config:
         from_attributes = True
 
 
 class DonationWithDetails(DonationResponse):
-    """Full donation details with related entities"""
     item: ItemResponse
     donor: UserSimple
     recipient: UserSimple
-    
+
     class Config:
         from_attributes = True

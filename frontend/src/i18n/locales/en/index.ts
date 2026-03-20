@@ -51,6 +51,8 @@ export default {
     category: 'Category',
     condition: 'Condition',
     location: 'Pickup Location',
+    neighborhood: 'Neighborhood',
+    noImage: 'No image',
     status: 'Status',
     donor: 'Donor',
     posted: 'Posted',
@@ -126,5 +128,39 @@ export default {
     contact: 'Contact',
     terms: 'Terms',
     privacy: 'Privacy',
+  },
+  
+  // Contact
+  contact: {
+    title: 'Contact Us',
+    subtitle: 'Have a question or want to get involved? Send us a message.',
+    name: 'Name',
+    namePlaceholder: 'Your full name',
+    email: 'Email',
+    emailPlaceholder: 'your@email.com',
+    subject: 'Subject',
+    subjectPlaceholder: 'Select a topic',
+    message: 'Message',
+    messagePlaceholder: 'How can we help you?',
+    send: 'Send Message',
+    alternatively: 'Or email us directly at',
+    subjects: {
+      general: 'General Inquiry',
+      question: 'Question',
+      feedback: 'Feedback',
+      report: 'Report an Issue',
+      partnership: 'Partnership',
+    },
+    errors: {
+      nameRequired: 'Name is required',
+      emailRequired: 'Email is required',
+      emailInvalid: 'Please enter a valid email',
+      subjectRequired: 'Please select a subject',
+      messageRequired: 'Message is required',
+    },
+    form: {
+      success: 'Thank you! Your message has been sent.',
+      error: 'Something went wrong. Please try again.',
+    },
   },
 };

@@ -51,6 +51,8 @@ export default {
     category: 'Categoria',
     condition: 'Estado',
     location: 'Local de retirada',
+    neighborhood: 'Bairro',
+    noImage: 'Sem imagem',
     status: 'Status',
     donor: 'Doador',
     posted: 'Publicado',
@@ -126,5 +128,39 @@ export default {
     contact: 'Contato',
     terms: 'Termos',
     privacy: 'Privacidade',
+  },
+  
+  // Contact
+  contact: {
+    title: 'Fale Conosco',
+    subtitle: 'Tem uma pergunta ou quer participar? Envie-nos uma mensagem.',
+    name: 'Nome',
+    namePlaceholder: 'Seu nome completo',
+    email: 'E-mail',
+    emailPlaceholder: 'seu@email.com',
+    subject: 'Assunto',
+    subjectPlaceholder: 'Selecione um tema',
+    message: 'Mensagem',
+    messagePlaceholder: 'Como podemos ajudar?',
+    send: 'Enviar Mensagem',
+    alternatively: 'Ou envie um e-mail diretamente para',
+    subjects: {
+      general: 'Pergunta Geral',
+      question: 'Dúvida',
+      feedback: 'Feedback',
+      report: 'Reportar Problema',
+      partnership: 'Parceria',
+    },
+    errors: {
+      nameRequired: 'Nome é obrigatório',
+      emailRequired: 'E-mail é obrigatório',
+      emailInvalid: 'Por favor, insira um e-mail válido',
+      subjectRequired: 'Por favor, selecione um assunto',
+      messageRequired: 'Mensagem é obrigatória',
+    },
+    form: {
+      success: 'Obrigado! Sua mensagem foi enviada.',
+      error: 'Algo deu errado. Por favor, tente novamente.',
+    },
   },
 };
